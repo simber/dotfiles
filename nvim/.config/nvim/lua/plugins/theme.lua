@@ -1,0 +1,1 @@
+/home/borgman/.config/omarchy/current/theme/neovim.lua

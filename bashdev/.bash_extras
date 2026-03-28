@@ -1,0 +1,13 @@
+alias ls='exa -l -g --icons'
+alias ll='exa -l -g --icons'
+alias lla='exa -la -g --icons'
+alias l='ls -CF'
+
+fe() {
+  fzf -m --preview='bat --color=always {}' --bind 'enter:become(nvim {+})'
+}
+
+export FZF_ALT_C_COMMAND="find . -maxdepth 3  -type d"
+alias cdc='cd "$(find . -maxdepth 3 -type d | fzf)"'
+
+alias gcx="git checkout \$(git branch -a | sed -E 's/remotes\/([a-zA-Z-]*\/)//' | grep -v '\\*|HEAD' | sort | uniq | fzf --select-1)"

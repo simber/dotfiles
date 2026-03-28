@@ -10,6 +10,9 @@ $git_branch\
 $git_status\
 [](fg:#394260 bg:#212736)\
 $golang\
+$rust\
+$zig\
+$cpp\
 [](fg:#212736 bg:#1d2230)\
 $time\
 [ ](fg:#1d2230)\
@@ -53,6 +56,19 @@ format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 
 [php]
 symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[zig]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[cpp]
+disabled = false
+symbol = ""
+detect_extensions = ['cpp', 'hpp', 'cc', 'c', 'h']
+detect_files = ['CMakeLists.txt']
 style = "bg:#212736"
 format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
 

@@ -13,4 +13,17 @@ vim.g.autoformat_disabled_filetypes = { "sh" }
 vim.opt.title = true
 vim.opt.titlestring = "nvim"
 vim.opt.titleold = "shell"
-vim.g.clipboard = "osc52"
+vim.opt.clipboard = "unnamedplus"
+
+-- Use built-in OSC52 support (Neovim 0.10+)
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = {
+    ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+  },
+}
